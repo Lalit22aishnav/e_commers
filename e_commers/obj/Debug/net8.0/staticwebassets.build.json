@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "RCmlaicd8FlGill08hiaGNytc6elMpmioccg6d9K7i4=",
+  "Source": "e_commers",
+  "BasePath": "_content/e_commers",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "e_commers/wwwroot",
+      "Source": "e_commers",
+      "ContentRoot": "/home/lalit/Documents/e_commers/e_commers/wwwroot/",
+      "BasePath": "_content/e_commers",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

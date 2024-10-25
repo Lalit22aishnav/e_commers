@@ -1,0 +1,48 @@
+@model CityViewModel
+
+<section class="flex flex-row gap-4">
+<div class="bg-white p-8 rounded-lg shadow-md w-80">
+    <h2 class="text-lg font-semibold text-gray-700 mb-4">Task 1</h2>
+    <h3 class="text-lg font-semibold text-gray-700 mb-4">Select City</h3>
+    <form asp-action="GetCityInfo" method="post">
+        <select asp-for="SelectedCity" asp-items="Model.CityList"
+            class="w-full p-2 border border-gray-300 rounded mb-4" onchange="toggleButton()">
+            <option value="">Select a city</option>
+        </select>
+
+        <button type="submit" 
+                id="searchButton"
+                class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50" 
+                disabled>
+            Search
+        </button>
+    </form>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-md w-80">
+    <h2 class="text-lg font-semibold text-gray-700 mb-4">Task 2</h2>
+    <h3 class="text-lg font-semibold text-gray-700 mb-4">Get User As Per Filter</h3>
+    <form asp-action="GetUserInfo" method="post">
+        <div class="mb-4">
+                <input type="number" name="userAge" min="1" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300" placeholder="Enter User ID">
+            </div>
+        <button type="submit" 
+                class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50">
+            Search
+        </button>
+    </form>
+</div>
+</section>
+
+
+<script>
+    function toggleButton() {
+        const dropdown = document.getElementById('SelectedCity');
+        const searchButton = document.getElementById('searchButton');
+        
+        // Enable button only if a city is selected
+        searchButton.disabled = dropdown.value === "";
+    }
+
+    // Initial check on page load
+    document.addEventListener("DOMContentLoaded", toggleButton);
+</script>
