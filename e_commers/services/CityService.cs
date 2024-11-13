@@ -17,7 +17,7 @@ namespace demo.APIS.CityService
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.Add("Accept", "*/*");
-            request.Headers.Add("X-Api-Key", "Rck3miuFqudy6Y3F0hQuXsnV08kE12PrdG5yB9Ea");
+            request.Headers.Add("X-Api-Key", "XXX");
 
             var response = await _httpClient.SendAsync(request);
             Logger.Instance.Log("response : "+response);
